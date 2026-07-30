@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login · Alex Api</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://duan-detect.onrender.com/duan-widget.js" async defer></script>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: #060606; color: #e6e6e6; font-family: 'Inter', sans-serif; padding: 20px;
+  }
+  .card {
+    background: #101010; border: 1px solid #232323; border-radius: 10px;
+    padding: 32px; width: 100%; max-width: 360px;
+  }
+  h1 { font-size: 18px; margin: 0 0 4px; color: #fff; }
+  p.sub { font-size: 12.5px; color: #8a8a8a; margin: 0 0 20px; }
+  input {
+    width: 100%; background: #000; border: 1px solid #262626; color: #fff;
+    padding: 11px 12px; border-radius: 6px; font-size: 13.5px; margin-bottom: 12px;
+  }
+  button.submit {
+    width: 100%; padding: 11px; background: #2563eb; color: #fff; border: none;
+    border-radius: 6px; font-size: 13.5px; font-weight: 600; cursor: pointer; margin-top: 4px;
+  }
+  button.submit:hover { background: #1d4ed8; }
+  .result {
+    margin-top: 16px; background: #000; border: 1px solid #232323; border-radius: 6px;
+    padding: 10px 12px; font-family: monospace; font-size: 11.5px; color: #9aa5b1;
+    white-space: pre-wrap; word-break: break-all; max-height: 140px; overflow: auto;
+  }
+  .switch { font-size: 12.5px; color: #8a8a8a; margin-top: 16px; text-align: center; }
+  .switch a { color: #2563eb; text-decoration: none; }
+  .duan-widget-container { margin: 10px 0 4px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Alex Api</h1>
+  <p class="sub">Iniciá sesión con tu cuenta</p>
+
+  <input id="username" placeholder="Usuario">
+  <input id="password" type="password" placeholder="Contraseña">
+
+  <div class="duan-widget-container" data-sitekey="PONE_ACA_TU_DUAN_SITEKEY_DE_ALEX" data-callback="onDuanVerified"></div>
+
+  <button class="submit" onclick="doLogin()">Entrar</button>
+
+  <div class="result" id="json" style="display:none"></div>
+
+  <div class="switch">¿No tenés cuenta? <a href="/register">Registrate</a></div>
+</div>
+
+<script>
+let duanToken = null;
+function onDuanVerified(token) { duanToken = token; }
+
+async function doLogin() {
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value;
+  const json = document.getElementById('json');
+  json.style.display = 'block';
+
+  if (!username || !password) {
+    json.textContent = 'Escribe usuario y contraseña.';
+    return;
+  }
+  if (!duanToken) {
+    json.textContent = 'Completa la verificación Duan.';
+    return;
+  }
+
+  json.textContent = 'Enviando...';
+
+  try {
+    const res = await fetch('/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password, duanToken }),
+    });
+    const data = await res.json();
+    json.textContent = JSON.stringify(data, null, 2);
+
+    if (data.status) {
+      window.location.href = '/dashboard';
+    } else {
+      duanToken = null;
+      setTimeout(() => window.location.reload(), 1200);
+    }
+  } catch (err) {
+    json.textContent = 'Error: ' + err.message;
+  }
+}
+</script>
+</body>
+</html>

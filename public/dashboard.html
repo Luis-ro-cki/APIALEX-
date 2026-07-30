@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard · Alex Api</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #060606; color: #e6e6e6; font-family: 'Inter', sans-serif; }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; border-bottom: 1px solid #1c1c1c; background: #0a0a0a;
+  }
+  header .brand { font-weight: 700; font-size: 15px; color: #fff; }
+  header button {
+    background: #1c1c1c; color: #e6e6e6; border: 1px solid #2a2a2a;
+    padding: 7px 14px; border-radius: 6px; font-size: 12.5px; cursor: pointer;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px 60px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 24px; }
+  @media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }
+  .stat {
+    background: #101010; border: 1px solid #1e1e1e; border-radius: 8px; padding: 18px;
+  }
+  .stat .label { font-size: 11px; color: #8a8a8a; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 8px; }
+  .stat .value { font-size: 20px; font-weight: 700; color: #fff; }
+  .card {
+    background: #101010; border: 1px solid #1e1e1e; border-radius: 8px; padding: 20px;
+  }
+  .card h2 { font-size: 13.5px; margin: 0 0 14px; color: #fff; }
+  .keyrow {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    background: #000; border: 1px solid #1e1e1e; border-radius: 6px; padding: 12px 14px;
+    font-family: monospace; font-size: 13px; word-break: break-all;
+  }
+  .keyrow button {
+    background: #2563eb; color: #fff; border: none; padding: 7px 12px;
+    border-radius: 5px; font-size: 11.5px; font-weight: 600; cursor: pointer; flex-shrink: 0;
+  }
+  code {
+    display: block; background: #000; border: 1px solid #1e1e1e; border-radius: 6px;
+    padding: 12px; font-size: 11.5px; margin-top: 14px; color: #9aa5b1; overflow-x: auto;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">Alex Api</div>
+  <button id="logoutBtn">Cerrar sesión</button>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+    <div class="stat"><div class="label">Usuario</div><div class="value" id="statUser">—</div></div>
+    <div class="stat"><div class="label">Uso</div><div class="value" id="statUsage">—</div></div>
+    <div class="stat"><div class="label">Plan</div><div class="value" id="statPlan">—</div></div>
+  </div>
+
+  <div class="card">
+    <h2>Tu api key</h2>
+    <div class="keyrow">
+      <span id="apiKeyText">cargando...</span>
+      <button id="copyBtn">Copiar</button>
+    </div>
+    <code id="usageExample"></code>
+  </div>
+</div>
+
+<script>
+async function loadSession() {
+  const r = await fetch('/api/session');
+  if (!r.ok) { window.location.href = '/login'; return; }
+  const data = await r.json();
+  const u = data.user;
+
+  document.getElementById('statUser').textContent = u.username;
+  document.getElementById('statPlan').textContent = u.isAdmin ? 'Admin' : 'Estándar';
+  document.getElementById('apiKeyText').textContent = u.apiKey;
+  document.getElementById('usageExample').textContent =
+    window.location.origin + '/search/ytsearch?apikey=' + u.apiKey + '&q=lofi hip hop';
+}
+
+document.getElementById('copyBtn').addEventListener('click', () => {
+  const text = document.getElementById('apiKeyText').textContent;
+  navigator.clipboard.writeText(text);
+});
+
+document.getElementById('logoutBtn').addEventListener('click', async () => {
+  await fetch('/api/logout', { method: 'POST' });
+  window.location.href = '/login';
+});
+
+loadSession();
+</script>
+</body>
+</html>
