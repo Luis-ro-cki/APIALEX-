@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 app.use(cookieSession({
   name: 'alexapi.sid',
-  keys: ['PONE_ACA_UN_SECRET_RANDOM'],
+  keys: ['DUANOFICIAL123456789OFCXD'],
   maxAge: 30 * 24 * 60 * 60 * 1000,
 }));
 
