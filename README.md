@@ -23,7 +23,6 @@ width="100%"
 <img src="https://img.shields.io/github/repo-size/Luis-ro-cki/APIALEX-?style=for-the-badge" />
 <img src="https://img.shields.io/github/languages/code-size/Luis-ro-cki/APIALEX-?style=for-the-badge" />
 <img src="https://img.shields.io/github/languages/count/Luis-ro-cki/APIALEX-?style=for-the-badge" />
-<img src="https://img.shields.io/github/top-language/Luis-ro-cki/APIALEX-?style=for-the-badge" />
 
 </div></div>
 
