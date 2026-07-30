@@ -109,7 +109,7 @@ Su arquitectura permite que nuevos servicios puedan integrarse de forma natural,
 
 <img src="https://github.com/Edward-oficial.png" width="160" alt="Edward-oficial"/>
 
-### 👨‍💻 Duan, Edward
+### Duan
 **[@Edward-oficial](https://github.com/Edward-oficial)**
 
 </td>
