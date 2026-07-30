@@ -80,9 +80,10 @@ Su arquitectura permite que nuevos servicios puedan integrarse de forma natural,
 ---
 
 ## 🚀 Team API Alex
-<table align="center">
 
+<table align="center">
 <tr>
+
 <td align="center" width="33%">
 
 <img src="https://github.com/Luis-ro-cki.png" width="160" alt="Luis-ro-cki"/>
@@ -90,7 +91,8 @@ Su arquitectura permite que nuevos servicios puedan integrarse de forma natural,
 ### 👑 Alex Aguilar
 GitHub: **[@Luis-ro-cki](https://github.com/Luis-ro-cki)**
 
-<tr>
+</td>
+
 <td align="center" width="33%">
 
 <img src="https://github.com/Edward-oficial.png" width="160" alt="Edward-oficial"/>
@@ -98,15 +100,19 @@ GitHub: **[@Luis-ro-cki](https://github.com/Luis-ro-cki)**
 ### 👨‍💻 Edward
 GitHub: **[@Edward-oficial](https://github.com/Edward-oficial)**
 
-<tr>
+</td>
+
 <td align="center" width="33%">
 
 <img src="https://github.com/Lou-Nyx.png" width="160" alt="Lou-Nyx"/>
 
-### 👨‍💻 Alex Aguilar
+### 🌸 Sakura Chan
 GitHub: **[@Lou-Nyx](https://github.com/Lou-Nyx)**
 
-</div>
+</td>
+
+</tr>
+</table>
 
 ---
 
