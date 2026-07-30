@@ -7,12 +7,25 @@ width="100%"
 
 <br>
 
-<img src="https://img.shields.io/github/license/Luis-ro-cki/APIALEX-?style=for-the-badge" />
-<img src="https://img.shields.io/github/stars/Luis-ro-cki/APIALEX-?style=for-the-badge" />
-<img src="https://img.shields.io/github/forks/Luis-ro-cki/APIALEX-?style=for-the-badge" />
-<img src="https://img.shields.io/github/issues/Luis-ro-cki/APIALEX-?style=for-the-badge" />
+<div align="center">
 
-</div>
+<img src="https://img.shields.io/github/stars/Luis-ro-cki/APIALEX-?style=for-the-badge&logo=github" />
+<img src="https://img.shields.io/github/forks/Luis-ro-cki/APIALEX-?style=for-the-badge&logo=github" />
+<img src="https://img.shields.io/github/watchers/Luis-ro-cki/APIALEX-?style=for-the-badge&logo=github" />
+<img src="https://img.shields.io/github/issues/Luis-ro-cki/APIALEX-?style=for-the-badge" />
+<img src="https://img.shields.io/github/issues-pr/Luis-ro-cki/APIALEX-?style=for-the-badge" />
+<img src="https://img.shields.io/github/license/Luis-ro-cki/APIALEX-?style=for-the-badge" />
+
+<br><br>
+
+<img src="https://img.shields.io/github/last-commit/Luis-ro-cki/APIALEX-?style=for-the-badge" />
+<img src="https://img.shields.io/github/commit-activity/m/Luis-ro-cki/APIALEX-?style=for-the-badge" />
+<img src="https://img.shields.io/github/repo-size/Luis-ro-cki/APIALEX-?style=for-the-badge" />
+<img src="https://img.shields.io/github/languages/code-size/Luis-ro-cki/APIALEX-?style=for-the-badge" />
+<img src="https://img.shields.io/github/languages/count/Luis-ro-cki/APIALEX-?style=for-the-badge" />
+<img src="https://img.shields.io/github/top-language/Luis-ro-cki/APIALEX-?style=for-the-badge" />
+
+</div></div>
 
 ---
 
@@ -113,18 +126,6 @@ Su arquitectura permite que nuevos servicios puedan integrarse de forma natural,
 
 </tr>
 </table>
-
----
-
-# 📈 Estadísticas
-
-<p align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=Luis-ro-cki&show_icons=true&theme=tokyonight&hide_border=true"/>
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Luis-ro-cki&layout=compact&theme=tokyonight&hide_border=true"/>
-
-</p>
 
 ---
 
