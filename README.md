@@ -89,7 +89,7 @@ Su arquitectura permite que nuevos servicios puedan integrarse de forma natural,
 <img src="https://github.com/Luis-ro-cki.png" width="160" alt="Luis-ro-cki"/>
 
 ### 👑 Alex Aguilar
-GitHub: **[@Luis-ro-cki](https://github.com/Luis-ro-cki)**
+**[@Luis-ro-cki](https://github.com/Luis-ro-cki)**
 
 </td>
 
@@ -98,7 +98,7 @@ GitHub: **[@Luis-ro-cki](https://github.com/Luis-ro-cki)**
 <img src="https://github.com/Edward-oficial.png" width="160" alt="Edward-oficial"/>
 
 ### 👨‍💻 Edward
-GitHub: **[@Edward-oficial](https://github.com/Edward-oficial)**
+**[@Edward-oficial](https://github.com/Edward-oficial)**
 
 </td>
 
@@ -107,7 +107,7 @@ GitHub: **[@Edward-oficial](https://github.com/Edward-oficial)**
 <img src="https://github.com/Lou-Nyx.png" width="160" alt="Lou-Nyx"/>
 
 ### 🌸 Sakura Chan
-GitHub: **[@Lou-Nyx](https://github.com/Lou-Nyx)**
+**[@Lou-Nyx](https://github.com/Lou-Nyx)**
 
 </td>
 
